@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面试准备：C++ | I Love Rose 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Eden Liu">
+    
+    
+
+    <meta name="description" content="前言：很久没有写博客了，觉得知识点的总结还是写下来为好，可以不断的复习巩固。这是之前的在准备实习的时候的准备，现在发到网上来，也是督促自己好好学习。另，有一些资料是总结于网上，参考链接未能及时记下，在此还是感谢网上的技术大牛的分享！
+1、MVC：Model（模型）、View（视图）、Control（控制器）（1）模型：模型持有所有的数据、状态和程序逻辑。模型独立于视图和控制器。
+（2）视图：用来呈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试准备：C++ | I Love Rose">
+<meta property="og:url" content="http://yoursite.com/2016/05/26/面试准备：C++/index.html">
+<meta property="og:site_name" content="I Love Rose">
+<meta property="og:description" content="前言：很久没有写博客了，觉得知识点的总结还是写下来为好，可以不断的复习巩固。这是之前的在准备实习的时候的准备，现在发到网上来，也是督促自己好好学习。另，有一些资料是总结于网上，参考链接未能及时记下，在此还是感谢网上的技术大牛的分享！
+1、MVC：Model（模型）、View（视图）、Control（控制器）（1）模型：模型持有所有的数据、状态和程序逻辑。模型独立于视图和控制器。
+（2）视图：用来呈">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable1.jpg">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable2.JPG">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable3.jpg">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable4.JPG">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable5.jpg">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable6.JPG">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable7.jpg">
+<meta property="og:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable8.jpg">
+<meta property="og:updated_time" content="2016-05-26T13:14:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试准备：C++ | I Love Rose">
+<meta name="twitter:description" content="前言：很久没有写博客了，觉得知识点的总结还是写下来为好，可以不断的复习巩固。这是之前的在准备实习的时候的准备，现在发到网上来，也是督促自己好好学习。另，有一些资料是总结于网上，参考链接未能及时记下，在此还是感谢网上的技术大牛的分享！
+1、MVC：Model（模型）、View（视图）、Control（控制器）（1）模型：模型持有所有的数据、状态和程序逻辑。模型独立于视图和控制器。
+（2）视图：用来呈">
+<meta name="twitter:image" content="http://7xsziv.com2.z0.glb.clouddn.com/vtable1.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">I Love Rose</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Eden
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/EdenSSS" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面试准备：C++</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-05-26" class="post-meta__date date">2016-05-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/技术/">技术</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>前言：很久没有写博客了，觉得知识点的总结还是写下来为好，可以不断的复习巩固。这是之前的在准备实习的时候的准备，现在发到网上来，也是督促自己好好学习。另，有一些资料是总结于网上，参考链接未能及时记下，在此还是感谢网上的技术大牛的分享！</p>
+<h5 id="1、MVC：Model（模型）、View（视图）、Control（控制器）"><a href="#1、MVC：Model（模型）、View（视图）、Control（控制器）" class="headerlink" title="1、MVC：Model（模型）、View（视图）、Control（控制器）"></a>1、MVC：Model（模型）、View（视图）、Control（控制器）</h5><p>（1）模型：模型持有所有的数据、状态和程序逻辑。模型独立于视图和控制器。</p>
+<p>（2）视图：用来呈现模型。视图通常直接从模型中取得它需要显示的状态与数据。对于相同的信息可以有多个不同的显示形式或视图。</p>
+<p>（3）控制器：位于视图和模型中间，负责接受用户的输入，将输入进行解析并反馈给模型，通常一个视图具有一个控制器。</p>
+<p><strong>Model（模型）</strong>是应用程序中用于处理应用程序数据逻辑的部分。</p>
+<p>　　通常模型对象负责在数据库中存取数据。</p>
+<p><strong>View（视图）</strong>是应用程序中处理数据显示的部分。</p>
+<p>　　通常视图是依据模型数据创建的。</p>
+<p><strong>Controller（控制器）</strong>是应用程序中处理用户交互的部分。</p>
+<p>　　通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+<hr>
+<h5 id="2、多线程："><a href="#2、多线程：" class="headerlink" title="2、多线程："></a>2、多线程：</h5><p>每个正在系统上运行的<a href="http://baike.baidu.com/view/17674.htm" target="_blank" rel="external">程序</a>都是一个<a href="http://baike.baidu.com/view/19746.htm" target="_blank" rel="external">进程</a>。每个<a href="http://baike.baidu.com/view/19746.htm" target="_blank" rel="external">进程</a>包含一到多个线程。<a href="http://baike.baidu.com/view/19746.htm" target="_blank" rel="external">进程</a>也可能是整个<a href="http://baike.baidu.com/view/17674.htm" target="_blank" rel="external">程序</a>或者是部分程序的动态执行。线程是一组<a href="http://baike.baidu.com/view/178461.htm" target="_blank" rel="external">指令</a>的集合，或者是<a href="http://baike.baidu.com/view/17674.htm" target="_blank" rel="external">程序</a>的特殊段，它可以在程序里独立执行。也可以把它理解为<a href="http://baike.baidu.com/view/41.htm" target="_blank" rel="external">代码</a>运行的上下文。所以线程基本上是轻量级的<a href="http://baike.baidu.com/view/19746.htm" target="_blank" rel="external">进程</a>，它负责在单个<a href="http://baike.baidu.com/view/17674.htm" target="_blank" rel="external">程序</a>里执行多<a href="http://baike.baidu.com/view/135914.htm" target="_blank" rel="external">任务</a>。通常由<a href="http://baike.baidu.com/view/880.htm" target="_blank" rel="external">操作系统</a>负责多个线程的调度和执行。</p>
+<p>线程是<a href="http://baike.baidu.com/view/17674.htm" target="_blank" rel="external">程序</a>中一个单一的顺序控制流程.在单个程序中同时运行多个线程完成不同的工作,称为多线程.</p>
+<p>线程和<a href="http://baike.baidu.com/view/19746.htm" target="_blank" rel="external">进程</a>的区别在于,子进程和<a href="http://baike.baidu.com/view/8507578.htm" target="_blank" rel="external">父进程</a>有不同的<a href="http://baike.baidu.com/view/41.htm" target="_blank" rel="external">代码</a>和数据空间,而多个线程则共享数据空间,每个线程有自己的执行<a href="http://baike.baidu.com/view/93201.htm" target="_blank" rel="external">堆栈</a>和<a href="http://baike.baidu.com/view/178145.htm" target="_blank" rel="external">程序计数器</a>为其执行上下文.多线程主要是为了节约CPU时间,发挥利用,根据具体<a href="http://baike.baidu.com/view/780206.htm" target="_blank" rel="external">情况</a>而定. 线程的运行中需要使用计算机的<a href="http://baike.baidu.com/view/1082.htm" target="_blank" rel="external">内存</a>资源和CPU。</p>
+<p>进程作为分配资源的基本单位，而把线程作为独立运行和独立调度的基本单位。</p>
+<hr>
+<h5 id="3、指针与数组的对比"><a href="#3、指针与数组的对比" class="headerlink" title="3、指针与数组的对比"></a>3、指针与数组的对比</h5><p>　　C++/C程序中，指针和数组在不少地方可以相互替换着用，让人产生一种错觉，以为两者是等价的。</p>
+<p>　　数组要么在静态存储区被创建（如全局数组），要么在栈上被创建。数组名对应着（而不是指向）一块内存，其地址与容量在生命期内保持不变，只有数组的内容可以改变。</p>
+<p>　　指针可以随时指向任意类型的内存块，它的特征是“可变”，所以我们常用指针来操作动态内存。指针远比数组灵活，但也更危险。</p>
+<hr>
+<h5 id="4、在C-中，内存分成5个区，他们分别是堆、栈、自由存储区、全局-静态存储区和常量存储区。"><a href="#4、在C-中，内存分成5个区，他们分别是堆、栈、自由存储区、全局-静态存储区和常量存储区。" class="headerlink" title="4、在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。"></a>4、在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。</h5><p>　　栈，在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。</p>
+<p>　　<strong>new 操作符</strong>从<strong>自由存储区（free store）</strong>上为对象动态分配内存空间，而 <strong>malloc 函数</strong>从<strong>堆</strong>上动态分配内存。<strong>自由存储区</strong>是 <strong>C++ </strong>基于 <strong>new 操作符</strong>的一个抽象概念，凡是通过 <strong>new 操作符</strong>进行内存申请，该内存即为自由存储区。而<strong>堆</strong>是操作系统中的术语，是操作系统所维护的一块特殊内存，用于程序的内存动态分配，C 语言使用 <strong>malloc</strong>从堆上分配内存，使用 free释放已分配的对应内存。</p>
+<p>　　全局/静态存储区，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区。</p>
+<p>　　常量存储区，这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改。</p>
+<p>对于栈来讲，是由编译器自动管理，无需我们手工控制；对于堆来说，释放工作由程序员控制，容易产生memory leak。</p>
+<hr>
+<h5 id="5、内联函数"><a href="#5、内联函数" class="headerlink" title="5、内联函数"></a>5、内联函数</h5><p>是指用inline关键字修饰的函数。在类内定义的函数被默认成内联函数。内联函数从源代码层看，有函数的结构，而在编译后，却不具备函数的性质。内联函数不是在调用时发生控制转移，而是在编译时将函数体嵌入在每一个调用处。</p>
+<hr>
+<h5 id="6、条件指示符-ifndef"><a href="#6、条件指示符-ifndef" class="headerlink" title="6、条件指示符#ifndef"></a>6、条件指示符#ifndef</h5><p>最主要目的是防止头文件的重复包含和编译。（if not defined）<strong>头文件保护符</strong></p>
+<p>#ifndef 和 #endif 要一起使用，如果丢失#endif，可能会报错</p>
+<p>在C或C++语言源程序中允许用一个<a href="http://baike.baidu.com/view/390932.htm" target="_blank" rel="external">标识符</a>来表示一个字符串，称为“宏”。“define”为<a href="http://baike.baidu.com/view/2076445.htm" target="_blank" rel="external">宏定义</a>命令。</p>
+<p>A.h   里<br>#ifndef   A_H<br>#define   A_H<br>…<br>#endif</p>
+<p>B.h   和   C.h都include   “A.h”</p>
+<p>D.h里<br>include   “B.h”<br>include   “C.h”<br>在预编译的过程中，执行到include   “C.h”时会因为在上一句的时候已经定义了A_H这个宏，所以此时的ifndef条件不满足，也就不会再一次包含A.h，起到了防止重复引用头文件的效果</p>
+<hr>
+<h5 id="7、"><a href="#7、" class="headerlink" title="7、"></a>7、</h5><p>&lt; &gt;引用的是编译器的类库路径里面的头文件<br>“ “引用的是你程序目录的相对路径中的头文件，在程序目录的相对路径中找不到该头文件时会继续在类库路径里搜寻该头文件。</p>
+<hr>
+<p>8、<strong>const 有什么用途？</strong></p>
+<p>（1）可以定义 const 常量</p>
+<p>（2）const可以修饰函数的参数、返回值，甚至函数的定义体。被const修饰的东西都受到强制保护，可以预防意外的变动，能提高程序的健壮性。</p>
+<hr>
+<p>9、<strong>static有什么作用？</strong></p>
+<p>(1)局部静态变量</p>
+<p>在C/C++中, 局部变量按照存储形式可分为三种auto, static, register</p>
+<p>与auto类型(普通)局部变量相比, static局部变量有三点不同</p>
+<ol>
+<li>存储空间分配不同</li>
+</ol>
+<p>auto类型分配在栈上, 属于动态存储类别, 占动态存储区空间, 函数调用结束后自动释放, 而</p>
+<p>static分配在静态存储区, 在程序整个运行期间都不释放</p>
+<p>. 两者之间的作用域相同, 但生存期不同.</p>
+<p>2.</p>
+<p> static局部变量在所处模块在初次运行时进行初始化工作, 且只操作一次</p>
+<ol>
+<li>​</li>
+</ol>
+<p>对于局部静态变量, 如果不赋初值, 编译期会自动赋初值0或空字符</p>
+<p>, 而auto类型的初值是不确定的. (对于C++中的class对象例外, class的对象实例如果不初始化, 则会自动调用默认构造函数, 不管是否是static类型)</p>
+<p>(2)外部静态变量/函数</p>
+<p>用来表示不能被其它文件访问的全局变量和函数。为了限制全局变量/函数的作用域, 函数或变量前加static使得函数成为静态函数。但此处“static”的含义不是指存储方式，而是指对函数的作用域仅局限于本文件(所以又称内部函 数)。注意此时, 对于外部(全局)变量, 不论是否有static限制, 它的存储区域都是在静态存储区, 生存期都是全局的. 此时的static只是起作用域限制作用, 限定作用域在本模块(文件)内部.</p>
+<p>(3)静态数据成员/成员函数</p>
+<p>表示属于一个类而不是属于此类的任何特定对象的变量和函数。如果想在同类的多个对象之间实现数据共享，也不要用全局变量，那么可以使用静态成员变量。</p>
+<hr>
+<p>10、extern “C”是连接申明(linkage declaration),被extern “C”修饰的变量和函数是按照C语言方式编译和连接的。</p>
+<p><strong>目的</strong>：实现C++与C及其它语言的混合编程。</p>
+<p>C++中多了重载。也就是说，函数名一样，函数的参数和返回值可以不同<br>为了做到这个，函数在编译时都会重新命名。<br>用C编译器编译的函数没有按这种规则重新命名，那么你加上extern，告诉c++编译器<br>“这是C编译器编译的程序，要按C的命名方式来识别函数”</p>
+<hr>
+<p>11、<strong>assert宏的原型定义在中，其作用是如果它的条件返回错误，则终止程序执行，原型定义：#include void assert( int expression );</strong></p>
+<p><strong>assert的作用是现计算表达式 expression ，如果其值为假（即为0），那么它先向stderr打印一条出错信息，然后通过调用 abort 来终止程序运行。</strong></p>
+<hr>
+<p><strong>12、malloc/free与new/delete的区别</strong></p>
+<p>相同点：都可用于申请动态内存和释放内存<br>不同点：<br>（1）操作对象有所不同。<br>malloc与free是C++/C 语言的标准库函数，new/delete 是C++的运算符。对于非内部数据类的对象而言，光用maloc/free 无法满足动态对象的要求。对象在创建的同时要自动执行构造函数， 对象消亡之前要自动执行析构函数。由于malloc/free 是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加malloc/free。</p>
+<p>（2）用法上也有所不同。<br>函数malloc 的原型如下：<br>void <em> malloc(size_t size);<br>用malloc 申请一块长度为length 的整数类型的内存，程序如下：<br>int </em>p = (int <em>) malloc(sizeof(int) </em> length);<br>我们应当把注意力集中在两个要素上：“类型转换”和“sizeof”。<br>1、malloc 返回值的类型是void <em>，所以在调用malloc 时要显式地进行类型转换，将void </em> 转换成所需要的指针类型。<br>2、 malloc 函数本身并不识别要申请的内存是什么类型，它只关心内存的总字节数。<br>函数free 的原型如下：<br>void free( void * memblock );<br>为什么free 函数不象malloc 函数那样复杂呢？这是因为指针p 的类型以及它所指的内存的容量事先都是知道的，语句free(p)能正确地释放内存。如果p 是NULL 指针，那么free<br>对p 无论操作多少次都不会出问题。如果p 不是NULL 指针，那么free 对p连续操作两次就会导致程序运行错误。</p>
+<p>new/delete 的使用要点：<br>运算符new 使用起来要比函数malloc 简单得多，例如：<br>int <em>p1 = (int </em>)malloc(sizeof(int) <em> length);<br>int </em>p2 = new int[length];<br>这是因为new 内置了sizeof、类型转换和类型安全检查功能。对于非内部数据类型的对象而言，new 在创建动态对象的同时完成了初始化工作。如果对象有多个构造函数，那么new 的语句也可以有多种形式。</p>
+<p><strong>本质区别：</strong><br>malloc/free是C/C++语言的标准库函数，new/delete是C++的运算符。<br>对于用户自定义的对象而言，用maloc/free无法满足动态管理对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。因此C++需要一个能完成动态内存分配和初始化工作的运算符new，以及一个能完成清理与释放内存工作的运算符delete。</p>
+<p>1、new自动计算需要分配的空间，而malloc需要手工计算字节数<br>2、new是类型安全的，而malloc不是，比如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">2</span>]; <span class="comment">// 编译时指出错误</span></span><br><span class="line"><span class="keyword">int</span>* p = <span class="built_in">malloc</span>(<span class="number">2</span>*<span class="keyword">sizeof</span>(<span class="keyword">float</span>)); <span class="comment">// 编译时无法指出错误</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">operator</span> 由两步构成，分别是 <span class="keyword">operator</span> <span class="keyword">new</span> 和 construct</span><br></pre></td></tr></table></figure></p>
+<p>3、operator new对应于malloc，但operator new可以重载，可以自定义内存分配策略，甚至不做内存分配，甚至分配到非内存设备上。而malloc无能为力<br>4、new将调用constructor，而malloc不能；delete将调用destructor，而free不能。<br>5、malloc/free要库文件支持，new/delete则不要。 </p>
+<hr>
+<p><strong>13、sizeof和strlen区别</strong></p>
+<p>1.sizeof操作符的结果类型是size_t，它在头文件中typedef为unsigned int类型。<br>该类型保证能容纳实现所建立的最大对象的字节大小。 </p>
+<p>2.sizeof是算符，strlen是函数。 </p>
+<p>3.sizeof可以用类型做参数，strlen只能用char*做参数，且必须是以’’\0’’结尾的。<br>sizeof还可以用函数做参数，比如：<br>short f();<br>printf(“%d\n”, sizeof(f()));<br>输出的结果是sizeof(short)，即2。 </p>
+<p>4.数组做sizeof的参数不退化，传递给strlen就退化为指针了。 </p>
+<p>5.大部分编译程序 在编译的时候就把sizeof计算过了 是类型或是变量的长度这就是sizeof(x)可以用来定义数组维数的原因<br>char str[20]=”0123456789”;<br>int a=strlen(str); //a=10;<br>int b=sizeof(str); //而b=20; </p>
+<p>6.strlen的结果要在运行的时候才能计算出来，时用来计算字符串的长度，不是类型占内存的大小。 </p>
+<p>7.sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数。 </p>
+<p>8.当适用了于一个结构类型时或变量， sizeof 返回实际的大小，<br>当适用一静态地空间数组， sizeof 归还全部数组的尺寸。<br>sizeof 操作符不能返回动态地被分派了的数组或外部的数组的尺寸 </p>
+<p>9.数组作为参数传给函数时传的是指针而不是数组，传递的是数组的首地址，</p>
+<hr>
+<p><strong>14、<a href="http://blog.csdn.net/haoel/article/details/1948051" target="_blank" rel="external">虚表</a></strong></p>
+<p>​    虚函数（Virtual Function）是通过一张虚函数表（Virtual Table）来实现的。简称为V-Table。在这个表中，主是要一个类的虚函数的地址表，这张表解决了继承、覆盖的问题，保证其容真实反应实际的函数。这样，在有虚函数的类的实例中这个表被分配在了这个实例的内存中，所以，当我们用父类的指针来操作一个子类的时候，这张虚函数表就显得由为重要了，它就像一个地图一样，指明了实际所应该调用的函数。</p>
+<p>​    C++的编译器应该是保证虚函数表的指针存在于对象实例中最前面的位置（这是为了保证取到虚函数表的有最高的性能——如果有多层继承或是多重继承的情况下）。 这意味着我们通过对象实例的地址得到这张虚函数表，然后就可以遍历其中函数指针，并调用相应的函数。</p>
+<h5 id="（1）一般继承（无虚函数覆盖）"><a href="#（1）一般继承（无虚函数覆盖）" class="headerlink" title="（1）一般继承（无虚函数覆盖）"></a>（1）一般继承（无虚函数覆盖）</h5><p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable1.jpg" alt="1"></p>
+<p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable2.JPG" alt="2"></p>
+<h5 id="（2）一般继承（有虚函数覆盖）"><a href="#（2）一般继承（有虚函数覆盖）" class="headerlink" title="（2）一般继承（有虚函数覆盖）"></a>（2）一般继承（有虚函数覆盖）</h5><p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable3.jpg" alt="3"></p>
+<p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable4.JPG" alt="4"></p>
+<h5 id="（3）多重继承（无虚函数覆盖）"><a href="#（3）多重继承（无虚函数覆盖）" class="headerlink" title="（3）多重继承（无虚函数覆盖）"></a>（3）多重继承（无虚函数覆盖）</h5><p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable5.jpg" alt="5"></p>
+<p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable6.JPG" alt="6"></p>
+<h5 id="（4）多重继承（有虚函数覆盖）"><a href="#（4）多重继承（有虚函数覆盖）" class="headerlink" title="（4）多重继承（有虚函数覆盖）"></a>（4）多重继承（有虚函数覆盖）</h5><p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable7.jpg" alt="7"></p>
+<p><img src="http://7xsziv.com2.z0.glb.clouddn.com/vtable8.jpg" alt="8"></p>
+<hr>
+<p><strong>15、引用</strong></p>
+<p>（1）定义引用时，程序把引用和它的初始值<strong>绑定</strong>在一起，而不是将初始值拷贝给引用。一旦初始化完成，引用将和它的初始值对象一直绑定在一起。因为无法令引用绑定到另一个对象，因此引用必须初始化。</p>
+<p>（2）引用即别名。引用并非对象。相反的，它只是为一个已经存在的对象所起的另一个名字。</p>
+<p>（3）因为引用并非一个对象，所以不能定义引用的引用。</p>
+<p>（4）引用只能绑定在对象上，而不能与字面值或某个表达式的计算结果绑定在一起。</p>
+<p>（5）一旦定义了引用，就无法令其再绑定到另外的对象。</p>
+<hr>
+<p><strong>16、指针</strong></p>
+<p>（1）指针本身就是一个对象，允许对指针进行赋值和拷贝，而且在指针的生命周期内它可以先后指向几个不同的对象。其二，指针无须在定义时赋值。指针存放某个对象的地址。</p>
+<p>（2）<strong>&amp;：</strong>取地址符；<strong>*：</strong>解引用符</p>
+<p>（3）得到空指针最直接的方法就是用字面值<strong>nullptr</strong>来初始化指针。也可以通过将指针初始化为字面值0来生成空指针。</p>
+<p>（4）<strong>void*</strong>是一种特殊的指针类型，可用于存放任意对象的地址。</p>
+<p>（5）指针是内存中的对象，像其他对象一样也有自己的地址，因此允许把指针的地址再存放到另一个指针当中。</p>
+<p>（6）离变量名最近的符号对变量的类型有最直接的影响。例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> *&amp;r = p; <span class="comment">//r是一个对指针p的引用</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>17、const限定符</strong></p>
+<p>（1）默认情况下，const对象被设定为仅在文件内有效。对于const变量不管是声明还是定义都添加extern关键字，就可以实现只在一个文件中定义const，而在其他多个文件中声明并使用它。</p>
+<p>（2）<strong>对常量的引用（reference to const）</strong>不能被用作修改它所绑定的对象。</p>
+<p>（3）初始化<strong>常量引用(=对常量的引用)</strong>时允许用任意表达式作为初始值，只要该表达式的结果能转换为引用的类型即可。尤其，允许为一个常量引用绑定非常量的对象、字面值，甚至是一个一般表达式。</p>
+<p>（4）<strong>对const的引用可能引用一个非const的对象：</strong>必须认识到，常量引用仅对引用可参与的操作做出了限定，对于引用的对象本身是不是一个常量未做限定。因为对象也可能是个非常量，所以允许通过其他途径改变它的值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r2 = i;     <span class="comment">//r2绑定对象i，但是不允许通过r2修改i的值</span></span><br><span class="line">r2 = <span class="number">0</span>;                <span class="comment">//错误：r2是一个常量引用</span></span><br></pre></td></tr></table></figure>
+<p>（5）<strong>指向常量的指针</strong>不能用于改变其所指对象的值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> *ptr = &amp;pi; <span class="comment">//正确：ptr可以指向一个双精度常量</span></span><br><span class="line">*ptr = <span class="number">1</span>;                <span class="comment">//错误：不能给*ptr赋值</span></span><br></pre></td></tr></table></figure>
+<p>（6）允许令一个指向常量的指针指向一个非常量对象。</p>
+<p>（7）<strong>const指针：</strong>允许把指针本身定义为常量。常量指针必须初始化，而且一旦初始化完成，则它的值（也就是存放在指针中的那个地址）就不能再改变了。把*放在const关键字之前用以说明指针是一个常量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> errNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> curr = &amp;errNum; <span class="comment">//curr将一直指向errNum</span></span><br></pre></td></tr></table></figure>
+<p>（8）<strong>顶层const</strong>表示指针本身是一个常量，<strong>底层const</strong>表示指针所指的对象是一个常量。</p>
+<hr>
+<p><strong>18、移位运算符和sizeof运算符</strong></p>
+<p>（1）&lt;&lt;：左移；&gt;&gt;：右移；</p>
+<p>（2）移位运算符满足左结合律。</p>
+<p>（3）在使用数组下标的时候，通常将其定义为<strong>size_t</strong>类型。size_t是一种机器相关的无符号类型，它被设计得足够大以便能表示内存中任意对象的大小。</p>
+<p>（4）sizeof运算符返回一条表达式或一个类型名字所占的字节数。sizeof运算符满足右结合律，其所得的值是一个size_t类型的常量表达式（<strong>常量表达式</strong>是指只不会改变并且在编译过程中就能得到计算结果的表达式）。</p>
+<hr>
+<p><strong>19、继承与虚函数</strong></p>
+<p>（1）因为在派生类对象中含有与其基类对应的组成部分，所以我们能把派生类的对象当成基类对象来使用，而且我们也能将基类的指针或引用绑定到派生类对象中的基类部分上。这种转换通常称为<strong>派生类到基类的</strong>类转换。</p>
+<p>（2）派生类也必须使用基类的构造函数来初始化它的基类部分。</p>
+<p>（3）除非我们特别指出，否则派生类对象的基类部分会像数据成员一样执行默认初始化。如果想使用其他的基类构造函数，我们需要以类名加上圆括号内的实参列表的形式为构造函数提供初始值。这些实参将帮助编译器决定到底应该选用哪个构造函数来初始化派生类对象的基类部分。</p>
+<p>（4）C++11新标准提供了一种防止继承发生的方法，即在类名后跟一个关键字final。</p>
+<p>（5）我们可以将基类的指针或引用绑定到派生类对象上。当使用基类的对象时引用（或指针）时，实际上我们并不清楚该引用（或指针）所绑定对象的真实类型。</p>
+<p>（6）回避虚函数的机制：使用作用域运算符（::）可以实现这一目的。</p>
+<p>（7）<strong>纯虚函数：</strong>一个纯虚函数无须定义。我们通过在函数体的具体位置（即在声明语句的分号之前）书写=0就可以将一个虚函数说明为纯虚函数。</p>
+<p>（8）<strong>抽象基类：</strong>含有（或未经覆盖直接继承）纯虚函数的类。抽象基类负责定义接口，而后续的其他类可以覆盖该接口。</p>
+<p>（9）派生类构造函数只能初始化它的直接基类。</p>
+<p>（10）<strong>protected</strong>性质：派生类的成员或者友元只能通过派生类对象来访问基类的受保护成员。派生类对于一个基类的对象中的受保护成员没有任何访问权限。</p>
+<p>（11）派生访问说明符（public、protected和private继承）的目的是控制派生类用户（包括派生类的派生类在内）对于基类成员的访问权限。</p>
+<p>（12）友元关系不能继承。</p>
+<p>（13）通过在类的内部使用using声明语句，我们可以将该类的直接或间接基类中的任何可访问成员（例如，非私有成员）标记出来。using声明语句中句子的访问权限由该using声明语句之前的访问说明符来决定。派生类只能为那些它们可以访问的名字提供using声明。</p>
+<p>（14）派生类的作用域位于基类作用域之内。派生类的成员将隐藏同名的基类成员。通过作用域运算符来使用隐藏的成员。声明在内层作用域的函数并不会重载声明在外层作用域的函数。因此，定义在派生类中的函数也不会重载其基类中的成员。和其他作用域一样，如果派生类的成员与基类的某个成员同名，则派生类将在其作用域内隐藏掉该基类成员。即使派生类成员和基类成员的形参列表不一致，基类成员也仍然会被隐藏掉。（名字查找先于类型检查）</p>
+<hr>
+<h5 id="20、多重继承和虚继承"><a href="#20、多重继承和虚继承" class="headerlink" title="20、多重继承和虚继承"></a>20、多重继承和虚继承</h5><p>（1）基类的构造顺序与派生列表中基类的出现顺序保持一致，而与派生类构造函数初始值列表中基类的顺序无关。</p>
+<p>（2）如果一个类从它的多个基类中继承了相同的构造函数，则这个类必须为该构造函数定义它自己的版本。</p>
+<p>（3）在多重继承的情况下，相同的查找过程在所有直接基类中同时进行。如果名字在多个基类中都被找到，则对该名字的使用将具有二义性。</p>
+<p>（4）<strong>虚继承：</strong>是多重继承的一种形式，基类被继承了多次，但是派生类共享该基类的唯一一份副本。</p>
+<p>（5）<strong>虚基类：</strong>对于虚继承来说，虚基类将被最底层的派生类初始化，因此最底层的派生类应该含有它的所有虚基类的初始值。</p>
+<hr>
+<h5 id="21、虚函数（override）与重载（overload）的区别"><a href="#21、虚函数（override）与重载（overload）的区别" class="headerlink" title="21、虚函数（override）与重载（overload）的区别"></a>21、虚函数（override）与重载（overload）的区别</h5><p>​    重载函数在类型和参数数量上一定不相同，而重定义的虚函数则要求参数的类型和个数、函数返回类型相同；<br>    虚函数必须是类的成员函数，重载的函数则不一定是这样；<br>    构造函数可以重载，但不能是虚函数，析构函数可以是虚函数。</p>
+<hr>
+<h5 id="22、虚析构函数"><a href="#22、虚析构函数" class="headerlink" title="22、虚析构函数"></a>22、虚析构函数</h5><p>​    虚析构函数是为了解决这样的一个问题：<a href="http://baike.baidu.com/view/535539.htm" target="_blank" rel="external">基类</a>的<a href="http://baike.baidu.com/view/159417.htm" target="_blank" rel="external">指针</a>指向派生类对象，并用基类的指针删除派生类对象。如果基类的析构函数不是虚函数，那么当用一个基类的指针删除一个派生类的对象时，将不会有析构函数调用。</p>
+<pre><code>当然，并不是要把所有类的析构函数都写成虚函数。因为当类里面有虚函数的时候，编译器会给类添加一个虚函数表，里面来存放虚函数指针，这样就会增加类的存储空间。所以，只有当一个类被用来作为基类的时候，才把析构函数写成虚函数。
+</code></pre><hr>
+<h5 id="23、野指针"><a href="#23、野指针" class="headerlink" title="23、野指针"></a>23、野指针</h5><h5 id="成因："><a href="#成因：" class="headerlink" title="成因："></a>成因：</h5><p>（1）指针变量未初始化</p>
+<p>任何<a href="http://baike.baidu.com/view/379211.htm" target="_blank" rel="external">指针变量</a>刚被创建时不会自动成为NULL指针，它的缺省值是随机的，它会乱指一气。所以，指针变量在创建的同时应当被初始化，要么将指针设置为NULL，要么让它指向合法的内存。</p>
+<p>（2）指针释放后之后未置空</p>
+<p>有时<a href="http://baike.baidu.com/view/159417.htm" target="_blank" rel="external">指针</a>在free或delete后未赋值 NULL，便会使人以为是合法的。别看free和delete的名字（尤其是delete），它们只是把指针所指的内存给释放掉，但并没有把指针本身干掉。此时指针指向的就是“垃圾”内存。释放后的指针应立即将指针置为NULL，防止产生“野指针”。</p>
+<p>（3）指针操作超越变量作用域</p>
+<p>不要返回指向栈内存的指针或引用，因为栈内存在函数结束时会被释放。</p>
+<h5 id="规避："><a href="#规避：" class="headerlink" title="规避："></a>规避：</h5><p>（1）初始化时置 NULL</p>
+<p>指针变量一定要<a href="http://baike.baidu.com/view/872.htm" target="_blank" rel="external">初始化</a>为NULL，因为任何指针变量刚被创建时不会自动成为NULL指针，它的<a href="http://baike.baidu.com/view/116467.htm" target="_blank" rel="external">缺省值</a>是随机的。</p>
+<p>（2）释放时置 NULL</p>
+<p>当指针p指向的内存空间释放时，没有设置指针p的值为NULL。delete和free只是把内存空间释放了，但是并没有将指针p的值赋为NULL。通常判断一个指针是否合法，都是使用if语句测试该指针是否为NULL。</p>
+<hr>
+<h5 id="24、i-和-i的效率讨论"><a href="#24、i-和-i的效率讨论" class="headerlink" title="24、i++和++i的效率讨论"></a>24、i++和++i的效率讨论</h5><p>1、当变量i的数据类型是c++语言默认提供的类型的话，他们的效率是一样的。</p>
+<p>2、我们自定的数据类型，++i效率高于i++，通过运算符重载来给大家说明这一点。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Operator Operator::<span class="keyword">operator</span>++()</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">   ++value;    <span class="comment">//内部成员变量</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Operator Operator::<span class="keyword">operator</span>++(<span class="keyword">int</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Operator temp;</span><br><span class="line"></span><br><span class="line"> temp.value=value;</span><br><span class="line"></span><br><span class="line"> value++;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">return</span> temp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看到了吗？后++必须要有一个临时对象才可以完成。所以他的效率自然就下降了！</p>
+<hr>
+<h5 id="25、C-拷贝构造函数-深拷贝，浅拷贝"><a href="#25、C-拷贝构造函数-深拷贝，浅拷贝" class="headerlink" title="25、C++拷贝构造函数(深拷贝，浅拷贝)"></a>25、<a href="http://www.cnblogs.com/BlueTzar/articles/1223313.html" target="_blank" rel="external">C++拷贝构造函数(深拷贝，浅拷贝)</a></h5><p>（1）浅拷贝</p>
+<p>​    所谓浅拷贝，指的是在对象复制时，只是对对象中的数据成员进行简单的赋值，上面的例子都是属于浅拷贝的情况，<strong>默认拷贝构造函数执行的也是浅拷贝</strong>。</p>
+<p>​    问题：一旦对象存在动态成员，两个指针指向了堆里的同一个空间，在销毁对象时，两个对象的析构函数将对同一个内存空间释放两次。</p>
+<p>（2）深拷贝</p>
+<p>​    对于对象中动态成员，就不能仅仅简单地赋值了，而应该重新动态分配空间。</p>
+<p>（3）防止默认拷贝发生</p>
+<p>​    通过对对象复制的分析，我们发现对象的复制大多在进行“值传递”时发生，这里有一个小技巧可以防止按值传递——<strong>声明一个私有拷贝构造函数</strong>。甚至不必去定义这个拷贝构造函数，这样因为拷贝构造函数是私有的，如果用户试图按值传递或函数返回该类对象，将得到一个编译错误，从而可以避免按值传递或返回对象。</p>
+<hr>
+<h5 id="26、不能被继承的类"><a href="#26、不能被继承的类" class="headerlink" title="26、不能被继承的类"></a>26、不能被继承的类</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> Base&#123;</span><br><span class="line">    <span class="keyword">friend</span> T;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Base()&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"base"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Base()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> B:<span class="keyword">virtual</span> <span class="keyword">public</span> Base&lt;B&gt;&#123;   <span class="comment">//一定注意 必须是虚继承</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    B()&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"B"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> C:<span class="keyword">public</span> B&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    C()&#123;&#125;     <span class="comment">//继承时报错，无法通过编译</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    B b;      <span class="comment">//B类无法被继承</span></span><br><span class="line">    <span class="comment">//C c;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    类Base的构造函数和析构函数因为是私有的，只有Base类的友元可以访问，B类在继承时将模板的参数设置为了B类，所以构造B类对象时们可以直接访问父类（Base）的构造函数。</p>
+<p>​    为了解决重复初始化的问题，<strong>从具有虚基类的类继承的类在初始化时进行了特殊处理，在虚派生中，由最低层次的派生类的构造函数初始化虚基类</strong>。在我们上面的例1中就是由C的构造函数控制如何进行虚基类的初始化。</p>
+<h4 id="为什么B类不能被继承？"><a href="#为什么B类不能被继承？" class="headerlink" title="为什么B类不能被继承？"></a>为什么B类不能被继承？</h4><p>​    回到例1，因为B是Base的友元，所以B对象可以正常创建，但由于B使用了虚继承，所以如果要创建C对象，那么C类的构造函数就要负责虚基类（Base）的构造，但是Base的构造函数是私有的，C没有访问的权限（ps：友元关系不能被继承的），所以例1中的C类在编译时就会报错。这样B类就不能被继承了。</p>
+<hr>
+<h5 id="27、不允许重载的运算符"><a href="#27、不允许重载的运算符" class="headerlink" title="27、不允许重载的运算符"></a>27、不允许重载的运算符</h5><p>不能重载的运算符只有5个：<br>.  (成员访问运算符)<br>.*  (成员指针访问运算符)<br>::  (域运算符)<br>sizeof  (长度运算符)<br>?:  (条件运算符）</p>
+<p>​    前两个运算符不能重载是为了保证访问成员的功能不能被改变，域运算符和sizeof 运算符的运算对象是类型而不是变量或一般表达式，不具备重载的特征。最后一个因为这个运算符对于类对象来说没有实际意义，相反还会引起歧义。</p>
+<p>​    运算符重载的一个基本原则是：不允许程序员从语法内涵上改变运算符，不能改变C++语言的底层语义。</p>
+<hr>
+<h5 id="28、delete和delete-的区别"><a href="#28、delete和delete-的区别" class="headerlink" title="28、delete和delete[]的区别"></a>28、delete和delete[]的区别</h5><p>​    在回收用 new 分配的单个对象的内存空间的时候用 delete，回收用 new[] 分配的一组对象的内存空间的时候用 delete[]。</p>
+<pre><code>delete p1 在回收空间的过程中，只有 p1[0] 这个对象调用了析构函数，其它对象如 p1[1]、p1[2] 等都没有调用自身的析构函数，这就是问题的症结所在。如果用 delete[]，则在回收空间之前所有对象都会首先调用自己的析构函数。 
+</code></pre><p>​    基本类型的对象没有析构函数，所以回收基本类型组成的数组空间用 delete 和 delete[] 都是应该可以的；但是对于类对象数组，只能用 delete[]。对于 new 的单个对象，只能用 delete 不能用 delete[] 回收空间。 </p>
+<hr>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/05/26/面试准备：C++/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"edenloverose"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; Eden 2016. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75817625-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
